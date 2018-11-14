@@ -1,0 +1,53 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: php_fpm-alpine-edge
+    image: alpine:edge
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: php_fpm-alpine-latest
+    image: alpine:latest
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: php_fpm-archlinux
+    image: base/archlinux
+  - name: php_fpm-centos-6
+    image: centos:6
+  - name: php_fpm-centos-latest
+    image: centos:latest
+  - name: php_fpm-debian-latest
+    image: debian:latest
+  - name: php_fpm-debian-stable
+    image: debian:stable
+  - name: php_fpm-debian-unstable
+    image: debian:unstable
+  - name: php_fpm-fedora-latest
+    image: fedora:latest
+  - name: php_fpm-fedora-rawhide
+    image: fedora:rawhide
+  - name: php_fpm-opensuse-leap
+    image: opensuse:leap
+  - name: php_fpm-opensuse-tumbleweed
+    image: opensuse:tumbleweed
+  - name: php_fpm-ubuntu-artful
+    image: ubuntu:artful
+  - name: php_fpm-ubuntu-devel
+    image: ubuntu:devel
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  config_options:
+    defaults:
+      callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: yamllint

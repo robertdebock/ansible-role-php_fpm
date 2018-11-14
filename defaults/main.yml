@@ -1,0 +1,13 @@
+---
+# defaults file for php_fpm
+
+# To update packages this role places on the system, set `php_fpm_package_state` to `latest`.
+php_fpm_package_state: present
+
+# Settings for the pool
+php_fpm_listen: 127.0.0.1:9000
+php_fpm_pm: dynamic
+php_fpm_pm_max_children: 5
+php_fpm_pm_start_servers: 2
+php_fpm_pm_min_spare_servers: 1
+php_fpm_pm_max_spare_servers: 3

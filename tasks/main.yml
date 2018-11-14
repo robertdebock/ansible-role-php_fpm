@@ -1,0 +1,26 @@
+---
+# tasks file for php_fpm
+- name: install php-fpm
+  package:
+    name: "{{ php_fpm_packages }}"
+    state: "{{ php_fpm_package_state }}"
+
+- name: place php-fpm configuration
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  notify:
+    - restart php-fpm
+  with_items:
+    - src: php-fpm.conf.j2
+      dest: "{{ php_fpm_directory }}/php-fpm.conf"
+    - src: www.conf.j2
+      dest: "{{ php_fpm_include_directory }}/www.conf"
+
+- name: start php-fpm
+  service:
+    name: "{{ php_fpm_service }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"

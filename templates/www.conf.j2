@@ -1,0 +1,9 @@
+[www]
+user = {{ php_fpm_user }}
+group = {{ php_fpm_group }}
+listen = 127.0.0.1:9000
+pm = {{ php_fpm_pm }}
+pm.max_children = {{ php_fpm_pm_max_children }}
+pm.start_servers = {{ php_fpm_pm_start_servers }}
+pm.min_spare_servers = {{ php_fpm_pm_min_spare_servers }}
+pm.max_spare_servers = {{ php_fpm_pm_max_spare_servers }}
