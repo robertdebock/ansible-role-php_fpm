@@ -43,6 +43,9 @@ platforms:
 provisioner:
   name: ansible
   inventory:
+    host_vars:
+      php_fpm-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
     group_vars:
       all:
         php_fpm_ignore_docker: no
