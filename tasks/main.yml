@@ -4,6 +4,9 @@
   package:
     name: "{{ php_fpm_packages }}"
     state: "{{ php_fpm_package_state }}"
+  register: php_fpm_install_php_fpm
+  until: php_fpm_install_php_fpm
+  retries: 3
 
 - name: place php-fpm configuration
   template:
