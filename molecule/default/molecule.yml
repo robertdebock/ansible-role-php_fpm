@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: php_fpm-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: php_fpm-ubuntu-artful
-    image: ubuntu:artful
+  - name: php_fpm-ubuntu-latest
+    image: ubuntu:latest
+  - name: php_fpm-ubuntu-rolling
+    image: ubuntu:rolling
   - name: php_fpm-ubuntu-devel
     image: ubuntu:devel
   - name: php_fpm-ubuntu-latest
