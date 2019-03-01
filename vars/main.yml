@@ -7,8 +7,6 @@ _php_fpm_packages:
     - php7-fpm
   openSUSE Leap:
     - php7-fpm
-  openSUSE Tumbleweed:
-    - php7-fpm
 
 php_fpm_packages: "{{ _php_fpm_packages[ansible_distribution] | default(_php_fpm_packages['default']) }}"
 
@@ -20,7 +18,6 @@ _php_fpm_directory:
   Debian: /etc/php/7.3/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
-  openSUSE Tumbleweed: /etc/php7/fpm
   Ubuntu-17: /etc/php/7.1/fpm
   Ubuntu-18: /etc/php/7.2/fpm
 
@@ -33,7 +30,6 @@ _php_fpm_pid_directory:
   Debian: /var/run/php
   Fedora: /run/php-fpm
   openSUSE Leap: /var/run
-  openSUSE Tumbleweed: /var/run
   Ubuntu: /var/run/php
 
 php_fpm_pid_directory: "{{ _php_fpm_pid_directory[ansible_distribution] | default(_php_fpm_pid_directory['default']) }}"
@@ -66,7 +62,6 @@ _php_fpm_service:
   Debian: php7.3-fpm.service
   Fedora: php-fpm
   openSUSE Leap: php-fpm
-  openSUSE Tumbleweed: php-fpm
   Ubuntu-17: php7.1-fpm.service
   Ubuntu-18: php7.2-fpm.service
 
