@@ -19,7 +19,6 @@ This example is taken from `molecule/default/playbook.yml`:
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.php_fpm
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -32,8 +31,6 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for php_fpm
 
-# To update packages this role places on the system, set `php_fpm_package_state` to `latest`.
-php_fpm_package_state: present
 
 # Settings for the pool
 php_fpm_listen: 127.0.0.1:9000
@@ -42,12 +39,6 @@ php_fpm_pm_max_children: 5
 php_fpm_pm_start_servers: 2
 php_fpm_pm_min_spare_servers: 1
 php_fpm_pm_max_spare_servers: 3
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-php_fpm_ignore_docker: yes
-
 ```
 
 Requirements
