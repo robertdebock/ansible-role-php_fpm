@@ -19,7 +19,7 @@ _php_fpm_directory:
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
   Ubuntu-17: /etc/php/7.1/fpm
-  Ubuntu-18: /etc/php/7.2/fpm
+  Ubuntu: /etc/php/7.2/fpm
 
 php_fpm_directory: "{{ _php_fpm_directory[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_php_fpm_directory[ansible_distribution] | default(_php_fpm_directory['default'])) }}"
 
