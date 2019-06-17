@@ -19,6 +19,8 @@
       dest: "{{ php_fpm_directory }}/php-fpm.conf"
     - src: www.conf.j2
       dest: "{{ php_fpm_include_directory }}/www.conf"
+  loop_control:
+    label: "{{ item.src }}"
 
 - name: start php-fpm
   service:
