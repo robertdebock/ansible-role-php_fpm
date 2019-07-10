@@ -14,7 +14,6 @@ _php_fpm_directory:
   default: /etc
   Alpine: /etc/php7
   Archlinux: /etc/php
-  Debian-9: /etc/php/7.0/fpm
   Debian: /etc/php/7.3/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
