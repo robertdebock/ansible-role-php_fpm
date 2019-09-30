@@ -5,10 +5,10 @@ _php_fpm_packages:
     - php-fpm
   Alpine:
     - php7-fpm
-  openSUSE Leap:
+  Suse:
     - php7-fpm
 
-php_fpm_packages: "{{ _php_fpm_packages[ansible_distribution] | default(_php_fpm_packages['default']) }}"
+php_fpm_packages: "{{ _php_fpm_packages[ansible_os_family] | default(_php_fpm_packages['default']) }}"
 
 _php_fpm_directory:
   default: /etc
@@ -27,32 +27,28 @@ _php_fpm_pid_directory:
   Alpine: /run/php-fpm7
   Archlinux: /var/run/php-fpm
   Debian: /var/run/php
-  Fedora: /run/php-fpm
-  openSUSE Leap: /var/run
-  Ubuntu: /var/run/php
+  RedHat: /run/php-fpm
+  Suse: /var/run
 
-php_fpm_pid_directory: "{{ _php_fpm_pid_directory[ansible_distribution] | default(_php_fpm_pid_directory['default']) }}"
+php_fpm_pid_directory: "{{ _php_fpm_pid_directory[ansible_os_family] | default(_php_fpm_pid_directory['default']) }}"
 
 _php_fpm_user:
   default: nobody
   Debian: daemon
-  Ubuntu: daemon
 
-php_fpm_user: "{{ _php_fpm_user[ansible_distribution] | default(_php_fpm_user['default']) }}"
+php_fpm_user: "{{ _php_fpm_user[ansible_os_family] | default(_php_fpm_user['default']) }}"
 
 _php_fpm_group:
   default: nobody
   Debian: daemon
-  Ubuntu: daemon
 
-php_fpm_group: "{{ _php_fpm_group[ansible_distribution] | default(_php_fpm_group['default']) }}"
+php_fpm_group: "{{ _php_fpm_group[ansible_os_family] | default(_php_fpm_group['default']) }}"
 
 _php_fpm_include_directory:
   default: "{{ php_fpm_directory }}/php-fpm.d"
   Debian: "{{ php_fpm_directory }}/conf.d"
-  Ubuntu: "{{ php_fpm_directory }}/conf.d"
 
-php_fpm_include_directory: "{{ _php_fpm_include_directory[ansible_distribution] | default(_php_fpm_include_directory['default']) }}"
+php_fpm_include_directory: "{{ _php_fpm_include_directory[ansible_os_family] | default(_php_fpm_include_directory['default']) }}"
 
 _php_fpm_service:
   default: php-fpm
