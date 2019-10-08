@@ -6,8 +6,8 @@ php_fpm
 
 The purpose of this role is to install and configure php_fpm on your system.
 
-<img src="https://img.shields.io/ansible/role/d/32701"/>
-<img src="https://img.shields.io/ansible/quality/32701"/>
+<img src="https://img.shields.io/ansible/role/d/"/>
+<img src="https://img.shields.io/ansible/quality/"/>
 
 Example Playbook
 ----------------
