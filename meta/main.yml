@@ -35,7 +35,6 @@ galaxy_info:
   galaxy_tags:
     - phpfpm
     - fpm
-    - alpine
     - archlinux
     - centos
     - debian
