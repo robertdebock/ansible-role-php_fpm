@@ -37,6 +37,6 @@ galaxy_info:
     - fpm
     - archlinux
     - centos
-    - rhel
+    - redhat
 
 dependencies: []
