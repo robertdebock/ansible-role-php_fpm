@@ -35,8 +35,6 @@ galaxy_info:
   galaxy_tags:
     - phpfpm
     - fpm
-    - archlinux
     - centos
-    - redhat
 
 dependencies: []
