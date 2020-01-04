@@ -13,7 +13,6 @@ php_fpm_packages: "{{ _php_fpm_packages[ansible_os_family] | default(_php_fpm_pa
 _php_fpm_directory:
   default: /etc
   Alpine: /etc/php7
-  Archlinux: /etc/php
   Debian: /etc/php/7.3/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
@@ -25,7 +24,6 @@ php_fpm_directory: "{{ _php_fpm_directory[ansible_distribution ~ '-' ~ ansible_d
 _php_fpm_pid_directory:
   default: /run/php-fpm
   Alpine: /run/php-fpm7
-  Archlinux: /var/run/php-fpm
   Debian: /var/run/php
   RedHat: /run/php-fpm
   Suse: /var/run
