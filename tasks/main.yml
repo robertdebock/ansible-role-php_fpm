@@ -14,7 +14,7 @@
     dest: "{{ item.dest }}"
   notify:
     - restart php-fpm
-  with_items:
+  loop:
     - src: php-fpm.conf.j2
       dest: "{{ php_fpm_directory }}/php-fpm.conf"
     - src: www.conf.j2
