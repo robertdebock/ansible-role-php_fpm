@@ -14,6 +14,7 @@ _php_fpm_directory:
   default: /etc
   Alpine: /etc/php7
   Debian: /etc/php/7.3/fpm
+  Debian-unstable: /etc/php/7.4/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
   Ubuntu-17: /etc/php/7.1/fpm
@@ -53,6 +54,7 @@ _php_fpm_service:
   Alpine: php-fpm7
   Debian-9: php7.0-fpm.service
   Debian: php7.3-fpm.service
+  Debian-unstable: php7.4-fpm.service
   Fedora: php-fpm
   openSUSE Leap: php-fpm
   Ubuntu-17: php7.1-fpm.service
