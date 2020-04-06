@@ -17,7 +17,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.php_fpm
+    - role: robertdebock.php_fpm
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:

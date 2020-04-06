@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - ansible-role-php_fpm
+    - role: ansible-role-php_fpm
