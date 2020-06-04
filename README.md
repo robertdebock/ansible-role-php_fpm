@@ -2,9 +2,9 @@
 
 The purpose of this role is to install and configure php_fpm on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-php_fpm.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-php_fpm)|[![github](https://github.com/robertdebock/ansible-role-php_fpm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-php_fpm/actions)|[![quality](https://img.shields.io/ansible/quality/32701)](https://galaxy.ansible.com/robertdebock/php_fpm)|[![downloads](https://img.shields.io/ansible/role/d/32701)](https://galaxy.ansible.com/robertdebock/php_fpm)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-php_fpm.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-php_fpm)|[![github](https://github.com/robertdebock/ansible-role-php_fpm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-php_fpm/actions)|[![quality](https://img.shields.io/ansible/quality/32701)](https://galaxy.ansible.com/robertdebock/php_fpm)|[![downloads](https://img.shields.io/ansible/role/d/32701)](https://galaxy.ansible.com/robertdebock/php_fpm)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-php_fpm.svg)](https://github.com/robertdebock/ansible-role-php_fpm/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
