@@ -1,0 +1,41 @@
+---
+- name: test if php_fpm_listen is set correctly
+  assert:
+    that:
+      - php_fpm_listen is defined
+      - php_fpm_listen | length > 0
+
+- name: test if php_fpm_pm is set correctly
+  assert:
+    that:
+      - php_fpm_pm is defined
+      - php_fpm_pm | length > 0
+      - php_fpm_pm in ["dynamic", "ondemand", "static"]
+
+- name: test if php_fpm_pm_max_children is set correctly
+  assert:
+    that:
+      - php_fpm_pm_max_children is defined
+      - php_fpm_pm_max_children | int
+      - php_fpm_pm_max_children | int > 0
+
+- name: test if php_fpm_pm_start_servers is set correctly
+  assert:
+    that:
+      - php_fpm_pm_start_servers is defined
+      - php_fpm_pm_start_servers | int
+      - php_fpm_pm_start_servers | int > 0
+
+- name: test if php_fpm_pm_min_spare_servers is set correctly
+  assert:
+    that:
+      - php_fpm_pm_min_spare_servers is defined
+      - php_fpm_pm_min_spare_servers | int
+      - php_fpm_pm_min_spare_servers | int > 0
+
+- name: test if php_fpm_pm_max_spare_servers is set correctly
+  assert:
+    that:
+      - php_fpm_pm_max_spare_servers is defined
+      - php_fpm_pm_max_spare_servers | int
+      - php_fpm_pm_max_spare_servers | int > 0
