@@ -54,7 +54,6 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for php_fpm
 
-
 # Settings for the pool
 php_fpm_listen: 127.0.0.1:9000
 php_fpm_pm: dynamic
