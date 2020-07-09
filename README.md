@@ -30,6 +30,14 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.httpd
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
@@ -81,6 +89,12 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.buildtools
+- robertdebock.epel
+- robertdebock.openssl
+- robertdebock.python_pip
+- robertdebock.selinux
+- robertdebock.httpd
 
 ```
 
