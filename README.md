@@ -54,8 +54,16 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for php_fpm
 
-# Settings for the pool
+# The `php_fpm_listen` parameter can be an address:port combination or a path
+# if you want to use a socket. For example: `/run/php-fpm/www.sock`.
 php_fpm_listen: 127.0.0.1:9000
+
+# When using a socket in `php_fpm_listen`, you can set the user and group.
+# Sane defaults are set in `vars/main.yml`
+php_fpm_listen_owner: "{{ php_fpm_owner }}"
+php_fpm_listen_group: "{{ php_fpm_group }}"
+php_fpm_listen_mode: "0666"
+
 php_fpm_pm: dynamic
 php_fpm_pm_max_children: 5
 php_fpm_pm_start_servers: 2

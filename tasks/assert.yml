@@ -5,6 +5,24 @@
       - php_fpm_listen is defined
       - php_fpm_listen | length > 0
 
+- name: test if php_fpm_listen_owner is set correctly
+  assert:
+    that:
+      - php_fpm_listen_owner is defined
+      - php_fpm_listen_owner | length > 0
+
+- name: test if php_fpm_listen_group is set correctly
+  assert:
+    that:
+      - php_fpm_listen_group is defined
+      - php_fpm_listen_group | length > 0
+
+- name: test if php_fpm_listen_mode is set correctly
+  assert:
+    that:
+      - php_fpm_listen_mode is defined
+      - php_fpm_listen_mode | length > 0
+
 - name: test if php_fpm_pm is set correctly
   assert:
     that:
