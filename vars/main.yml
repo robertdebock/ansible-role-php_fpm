@@ -63,6 +63,7 @@ _php_fpm_service:
   openSUSE Leap: php-fpm
   Ubuntu-17: php7.1-fpm.service
   Ubuntu-18: php7.2-fpm.service
+  Ubuntu-18: php7.3-fpm.service
 
 php_fpm_service: "{{ _php_fpm_service[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_php_fpm_service[ansible_distribution] | default(_php_fpm_service['default'])) }}"
 
