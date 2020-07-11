@@ -29,6 +29,7 @@ _php_fpm_pid_directory:
   default: /run/php-fpm
   Alpine: /run/php-fpm7
   Debian: /var/run/php
+  Debian: /run/php
   RedHat: /run/php-fpm
   Suse: /var/run
 
