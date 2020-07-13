@@ -28,7 +28,6 @@ php_fpm_directory: "{{ _php_fpm_directory[ansible_distribution ~ '-' ~ ansible_d
 _php_fpm_pid_directory:
   default: /run/php-fpm
   Alpine: /run/php-fpm7
-  Debian: /var/run/php
   Debian: /run/php
   RedHat: /run/php-fpm
   Suse: /var/run
@@ -40,12 +39,6 @@ _php_fpm_user:
   Debian: daemon
 
 php_fpm_user: "{{ _php_fpm_user[ansible_os_family] | default(_php_fpm_user['default']) }}"
-
-_php_fpm_group:
-  default: nobody
-  Debian: daemon
-
-php_fpm_group: "{{ _php_fpm_group[ansible_os_family] | default(_php_fpm_group['default']) }}"
 
 _php_fpm_include_directory:
   default: "{{ php_fpm_directory }}/php-fpm.d"
