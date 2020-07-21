@@ -37,6 +37,7 @@ php_fpm_pid_directory: "{{ _php_fpm_pid_directory[ansible_os_family] | default(_
 _php_fpm_user:
   default: nobody
   Debian: daemon
+  Suse: wwwrun
 
 php_fpm_user: "{{ _php_fpm_user[ansible_os_family] | default(_php_fpm_user['default']) }}"
 
