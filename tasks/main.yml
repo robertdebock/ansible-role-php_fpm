@@ -23,7 +23,20 @@
     label: "{{ item.src }}"
 
 - name: start php-fpm
-  service:
-    name: "{{ php_fpm_service }}"
-    state: started
-    enabled: yes
+  block:
+    - name: normal start
+      service:
+        name: "{{ php_fpm_service }}"
+        state: started
+        enabled: yes
+  rescue:
+    - name: collect information
+      command: "{{ item }}"
+      loop:
+        - systemctl status "{{ php_fpm_service }}"
+        - journalctl -xe
+      register: php_fpm_collect_information
+    - name: show information
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ php_fpm_collect_information.results }}"
