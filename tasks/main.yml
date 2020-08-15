@@ -22,6 +22,27 @@
   loop_control:
     label: "{{ item.src }}"
 
+- name: correct permission for logfile
+  file:
+    path: /var/log/php-pfm.log
+    state: touch
+    modification_time: preserve
+    access_time: preserve
+    owner: "{{ php_fpm_user }}"
+    group: "{{ php_fpm_group }}"
+
+- name: place selinux type enforcement
+  copy:
+    src: my-php-fpm.te
+    dest: /etc/my-php-fpm.te
+  notify:
+    - create selinux mod
+    - create selinux pp
+    - load selinux pp
+  when:
+    - ansible_selinux.status is defined
+    - ansible_selinux.status == "enabled"
+
 - name: start php-fpm
   service:
     name: "{{ php_fpm_service }}"
