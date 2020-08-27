@@ -12,6 +12,7 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    mode: "0644"
   notify:
     - restart php-fpm
   loop:
@@ -30,11 +31,13 @@
     access_time: preserve
     owner: "{{ php_fpm_user }}"
     group: "{{ php_fpm_group }}"
+    mode: "0644"
 
 - name: place selinux type enforcement
   copy:
     src: my-php-fpm.te
     dest: /etc/my-php-fpm.te
+    mode: "0644"
   notify:
     - create selinux mod
     - create selinux pp
