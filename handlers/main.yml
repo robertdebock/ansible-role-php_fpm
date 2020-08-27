@@ -13,4 +13,3 @@
 
 - name: load selinux pp
   command: semodule -i /etc/my-php-fpm.pp
-
