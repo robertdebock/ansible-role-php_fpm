@@ -39,9 +39,9 @@
     dest: /etc/my-php-fpm.te
     mode: "0644"
   notify:
-    - create selinux mod
-    - create selinux pp
-    - load selinux pp
+    - create selinux mod for php_fpm
+    - create selinux pp for php_fpm
+    - load selinux pp for php_fpm
   when:
     - ansible_selinux.status is defined
     - ansible_selinux.status == "enabled"
