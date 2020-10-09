@@ -2,6 +2,7 @@
 # tasks file for php_fpm
 - name: include assert.yml
   include_tasks: assert.yml
+  run_once: yes
 
 - name: install php-fpm
   package:
