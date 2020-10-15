@@ -33,6 +33,5 @@ galaxy_info:
   galaxy_tags:
     - phpfpm
     - fpm
-    - centos
 
 dependencies: []
