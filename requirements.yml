@@ -1,8 +1,9 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.epel
-- robertdebock.openssl
-- robertdebock.python_pip
-- robertdebock.selinux
-- robertdebock.httpd
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.buildtools
+  - name: robertdebock.epel
+  - name: robertdebock.openssl
+  - name: robertdebock.python_pip
+  - name: robertdebock.selinux
+  - name: robertdebock.httpd
