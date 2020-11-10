@@ -32,7 +32,7 @@
     that:
       - php_fpm_pm is defined
       - php_fpm_pm | length > 0
-      - php_fpm_pm in ["dynamic", "ondemand", "static"]
+      - php_fpm_pm in [ "dynamic", "ondemand", "static" ]
     quiet: yes
 
 - name: test if php_fpm_pm_max_children is set correctly
