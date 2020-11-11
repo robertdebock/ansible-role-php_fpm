@@ -39,7 +39,7 @@
   assert:
     that:
       - php_fpm_pm_max_children is defined
-      - php_fpm_pm_max_children | int
+      - php_fpm_pm_max_children is number
       - php_fpm_pm_max_children | int > 0
     quiet: yes
 
@@ -47,7 +47,7 @@
   assert:
     that:
       - php_fpm_pm_start_servers is defined
-      - php_fpm_pm_start_servers | int
+      - php_fpm_pm_start_servers is number
       - php_fpm_pm_start_servers | int > 0
     quiet: yes
 
@@ -55,7 +55,7 @@
   assert:
     that:
       - php_fpm_pm_min_spare_servers is defined
-      - php_fpm_pm_min_spare_servers | int
+      - php_fpm_pm_min_spare_servers is number
       - php_fpm_pm_min_spare_servers | int > 0
     quiet: yes
 
@@ -63,6 +63,6 @@
   assert:
     that:
       - php_fpm_pm_max_spare_servers is defined
-      - php_fpm_pm_max_spare_servers | int
+      - php_fpm_pm_max_spare_servers is number
       - php_fpm_pm_max_spare_servers | int > 0
     quiet: yes
