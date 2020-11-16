@@ -3,35 +3,30 @@
   assert:
     that:
       - php_fpm_listen is defined
-      - php_fpm_listen | length > 0
     quiet: yes
 
 - name: test if php_fpm_listen_owner is set correctly
   assert:
     that:
       - php_fpm_listen_owner is defined
-      - php_fpm_listen_owner | length > 0
     quiet: yes
 
 - name: test if php_fpm_listen_group is set correctly
   assert:
     that:
       - php_fpm_listen_group is defined
-      - php_fpm_listen_group | length > 0
     quiet: yes
 
 - name: test if php_fpm_listen_mode is set correctly
   assert:
     that:
       - php_fpm_listen_mode is defined
-      - php_fpm_listen_mode | length > 0
     quiet: yes
 
 - name: test if php_fpm_pm is set correctly
   assert:
     that:
       - php_fpm_pm is defined
-      - php_fpm_pm | length > 0
       - php_fpm_pm in [ "dynamic", "ondemand", "static" ]
     quiet: yes
 
