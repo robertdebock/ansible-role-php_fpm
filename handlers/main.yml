@@ -1,9 +1,12 @@
 ---
 # handlers file for php_fpm
+
 - name: restart php-fpm
   service:
     name: "{{ php_fpm_service }}"
     state: restarted
+  when:
+    - not ansible_check_mode | bool
 
 - name: create selinux mod for php_fpm
   command: checkmodule -M -m -o /etc/my-php-fpm.mod /etc/my-php-fpm.te
