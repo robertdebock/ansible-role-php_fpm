@@ -2,7 +2,7 @@
 # handlers file for php_fpm
 
 - name: restart php-fpm
-  service:
+  ansible.builtin.service:
     name: "{{ php_fpm_service }}"
     state: restarted
   when:
