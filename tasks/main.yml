@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install php-fpm
-  package:
+  ansible.builtin.package:
     name: "{{ php_fpm_packages }}"
     state: present
 
 - name: place php-fpm configuration
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     mode: "0644"
@@ -27,7 +27,7 @@
     label: "{{ item.src }}"
 
 - name: correct permission for logfile
-  file:
+  ansible.builtin.file:
     path: /var/log/php-pfm.log
     state: touch
     modification_time: preserve
@@ -37,7 +37,7 @@
     mode: "0644"
 
 - name: place selinux type enforcement
-  copy:
+  ansible.builtin.copy:
     src: my-php-fpm.te
     dest: /etc/my-php-fpm.te
     mode: "0644"
@@ -50,7 +50,7 @@
     - ansible_selinux.status == "enabled"
 
 - name: start php-fpm
-  service:
+  ansible.builtin.service:
     name: "{{ php_fpm_service }}"
     state: started
     enabled: yes
