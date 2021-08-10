@@ -55,7 +55,8 @@ _php_fpm_service:
   Alpine: php-fpm7
   Debian-9: php7.0-fpm.service
   Debian: php7.3-fpm.service
-  Debian-testing: php7.4-fpm.service
+  Debian-testing: &testing php7.4-fpm.service
+  Debian-11: *testing
   Debian-unstable: php7.4-fpm.service
   Fedora: php-fpm
   openSUSE Leap: php-fpm
