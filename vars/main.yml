@@ -15,7 +15,8 @@ _php_fpm_directory:
   default: /etc
   Alpine: /etc/php7
   Debian: /etc/php/7.3/fpm
-  Debian-testing: /etc/php/7.4/fpm
+  Debian-testing: &testing /etc/php/7.4/fpm
+  Debian-11: &testing
   Debian-unstable: /etc/php/7.4/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
