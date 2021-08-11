@@ -11,14 +11,6 @@
     name: "{{ php_fpm_packages }}"
     state: present
 
-- name: show shit
-  debug:
-    msg:
-      - "ansible_distribution: {{ ansible_distribution }}"
-      - "ansible_distribution_major_version: {{ ansible_distribution_major_version }}"
-      - "php_fpm_directory: {{ php_fpm_directory }}"
-      - "php_fpm_include_directory: {{ php_fpm_include_directory }}"
-
 - name: place php-fpm configuration
   ansible.builtin.template:
     src: "{{ item.src }}"
