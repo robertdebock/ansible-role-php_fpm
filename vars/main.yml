@@ -23,6 +23,7 @@ _php_fpm_directory:
   Ubuntu-17: /etc/php/7.1/fpm
   Ubuntu-18: /etc/php/7.2/fpm
   Ubuntu-19: /etc/php/7.2/fpm
+  Ubuntu-22: /etc/php/8.1/fpm
   Ubuntu: /etc/php/7.4/fpm
 
 php_fpm_directory: "{{ _php_fpm_directory[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_php_fpm_directory[ansible_distribution] | default(_php_fpm_directory['default'] )) }}"
@@ -62,6 +63,7 @@ _php_fpm_service:
   Ubuntu-17: php7.1-fpm.service
   Ubuntu-18: php7.2-fpm.service
   Ubuntu-19: php7.2-fpm.service
+  Ubuntu-22: php8.1-fpm.service
   Ubuntu: php7.4-fpm.service
 
 php_fpm_service: "{{ _php_fpm_service[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_php_fpm_service[ansible_distribution] | default(_php_fpm_service['default'] )) }}"
