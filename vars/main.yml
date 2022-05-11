@@ -17,6 +17,7 @@ _php_fpm_directory:
   Debian: /etc/php/7.3/fpm
   Debian-testing: &testing_directory /etc/php/7.4/fpm
   Debian-11: *testing_directory
+  Debian-12: /etc/php/8.1/fpm
   Debian-unstable: /etc/php/7.4/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
@@ -58,6 +59,7 @@ _php_fpm_service:
   Debian: php7.3-fpm.service
   Debian-testing: &testing_service php7.4-fpm.service
   Debian-11: *testing_service
+  Debian-12: php8.1-fpm.service
   Debian-unstable: php7.4-fpm.service
   Fedora: php-fpm
   openSUSE Leap: php-fpm
