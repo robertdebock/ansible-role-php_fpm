@@ -50,8 +50,8 @@ php_fpm_include_directory: "{{ _php_fpm_include_directory[ansible_os_family] | d
 _php_fpm_service:
   default: php-fpm
   Alpine: php-fpm7
-  Debian: php7.4-fpm.service
-  Debian-11: php8.1-fpm.service
+  Debian: php8.1-fpm.service
+  Debian-11: php7.4-fpm.service
   Fedora: php-fpm
   openSUSE Leap: php-fpm
   Ubuntu-17: php7.1-fpm.service
