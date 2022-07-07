@@ -14,11 +14,7 @@ php_fpm_packages: "{{ _php_fpm_packages[ansible_os_family] | default(_php_fpm_pa
 _php_fpm_directory:
   default: /etc
   Alpine: /etc/php7
-  Debian: /etc/php/7.3/fpm
-  Debian-testing: &testing_directory /etc/php/7.4/fpm
-  Debian-11: *testing_directory
-  Debian-12: /etc/php/8.1
-  Debian-unstable: /etc/php/7.4/fpm
+  Debian: /etc/php/8.1/fpm
   Fedora: /etc
   openSUSE Leap: /etc/php7/fpm
   Ubuntu-17: /etc/php/7.1/fpm
