@@ -5,6 +5,7 @@
     that:
       - php_fpm_listen is defined
       - php_fpm_listen is string
+      - php_fpm_listen is not none
     quiet: yes
 
 - name: assert | Test if php_fpm_listen_owner is set correctly
@@ -12,6 +13,7 @@
     that:
       - php_fpm_listen_owner is defined
       - php_fpm_listen_owner is string
+      - php_fpm_listen_owner is not none
     quiet: yes
 
 - name: assert | Test if php_fpm_listen_group is set correctly
@@ -19,6 +21,7 @@
     that:
       - php_fpm_listen_group is defined
       - php_fpm_listen_group is string
+      - php_fpm_listen_group is not none
     quiet: yes
 
 - name: assert | Test if php_fpm_listen_mode is set correctly
@@ -26,6 +29,7 @@
     that:
       - php_fpm_listen_mode is defined
       - php_fpm_listen_mode is string
+      - php_fpm_listen_mode is not none
     quiet: yes
 
 - name: assert | Test if php_fpm_pm is set correctly
