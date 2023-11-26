@@ -1,4 +1,4 @@
-# Ansible role [php_fpm](#php_fpm)
+# [Ansible role php_fpm](#php_fpm)
 
 The purpose of this role is to install and configure php_fpm on your system.
 
