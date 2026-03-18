@@ -47,8 +47,8 @@
     - Create selinux pp for php_fpm
     - Load selinux pp for php_fpm
   when:
-    - ansible_selinux.status is defined
-    - ansible_selinux.status == "enabled"
+    - ansible_facts['selinux'].status is defined
+    - ansible_facts['selinux'].status == "enabled"
 
 - name: Start php-fpm
   ansible.builtin.service:
